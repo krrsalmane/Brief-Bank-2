@@ -21,29 +21,21 @@ public class Main {
                         System.out.println("\n ======= Client Menu ======");
                         System.out.println("1-Add Client");
                         System.out.println("2-Display Client");
-                        //  System.out.println("3-Delete Learner");
-                        //  System.out.println("4-Modify on Leaner");
 
                         System.out.println("Enter the choice : ");
                         choice = sc.nextInt();
                         switch (choice) {
                             case 1:
-                                Client.addclient();
+                                Client.Add();
                                 break;
                             case 2:
                                 Client.Display();
                                 break;
-                            case 3:
-
-                                break;
-                            case 4:
-
-                                break;
-
                             default:
                                 System.out.println(" invalid choice!");
                         }
                     }while (choice !=6);
+                    System.out.println("this choice isn't available");
             }
         }while (choice != 3);
     }
