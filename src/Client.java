@@ -1,8 +1,6 @@
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.regex.*;
+
 
  public class Client {
     static int id=1;
@@ -59,31 +57,21 @@ import java.util.regex.*;
     public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
-//    public static void Add( ) {
-//
-  //           Scanner sc = new Scanner(System.in);
-//            System.out.println("Enter the full name :");
-//            String full_name = sc.nextLine();
-//            System.out.println("Enter the addressee :");
-//            String adressee = sc.nextLine();
-//            System.out.println("Enter telephone number:");
-//            String telephone = sc.nextLine();
-//
-//            System.out.println("Enter email :");
-//            String email = sc.nextLine();
-//        id++;
-   //         Client in = new Client(full_name, email, adressee, telephone, id);
-//        clients.add(in);
-//            System.out.println(" [ Adding Client succeeded ] ");
-//
-//            // Increment the ID for the next client
+
 
     public static void Add() {
-
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the full name :");
-        String full_name = sc.nextLine();
+        String full_name;
+   while(true) {
 
+       System.out.println("Enter the full name :");
+       full_name = sc.nextLine();
+       if (full_name.matches("^[A-Za-z]+ [A-Za-z]+$")) {
+           break;
+       } else {
+           System.out.println("enter the write formula");
+       }
+   }
         System.out.println("Enter the addressee :");
         String adressee = sc.nextLine();
         String telephone;
@@ -116,66 +104,6 @@ import java.util.regex.*;
         clients.add(in);
         System.out.println(" [ Adding Client succeeded ] ");
     }
-//    Scanner sc = new Scanner(System.in);
-//    System.out.println("Enter the full name :");
-//    String full_name = sc.nextLine();
-//
-//    System.out.println("Enter the addressee :");
-//    String adressee = sc.nextLine();
-//
-//    System.out.println("Enter telephone number (10 digits):");
-//    String telephone = sc.nextLine();
-//    if (!telephone.matches("\\d{10}")) {
-//        System.out.println("Invalid telephone number. It should contain exactly 10 digits.");
-//        return;
-//    }
-//    String email;
-//   do{
-//       System.out.println("Enter email :");
-//       email = sc.nextLine();
-//    if (!email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
-//        System.out.println("Invalid email format. Please try again.");
-//    return ;
-
-
-//        public static void Add() {
-//
-//            Scanner sc = new Scanner(System.in);
-//            System.out.println("Enter the full name :");
-//            String full_name = sc.nextLine();
-//
-//            System.out.println("Enter the addressee :");
-//            String adressee = sc.nextLine();
-//
-//            // Adding a regex check for the telephone number (exactly 10 digits)
-//            System.out.println("Enter telephone number (10 digits):");
-//            String telephone = sc.nextLine();
-//            if (!telephone.matches("\\d{10}")) {  // Regex to check if the telephone contains exactly 10 digits
-//                System.out.println("Invalid telephone number. It should contain exactly 10 digits.");
-//                return;
-//            }
-//
-//            // Adding a regex check for email format
-//            System.out.println("Enter email :");
-//            String email = sc.nextLine();
-//            if (!email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {  // Basic email regex pattern
-//                System.out.println("Invalid email format. Please try again.");
-//                return;
-//            }
-//
-//            id++;
-//            Client in = new Client(full_name, email, adressee, telephone, id);
-//            clients.add(in);
-//            System.out.println(" [ Adding Client succeeded ] ");
-//        }
-
-//    }}while(true);
-//    id++;
-//    Client in = new Client(full_name, email, adressee, telephone, id);
-//    clients.add(in);
-//    System.out.println(" [ Adding Client succeeded ] ");
-//}
-
 
      public static void Display() {
          if (clients.isEmpty()) {

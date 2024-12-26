@@ -1,7 +1,5 @@
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
        int choice;
@@ -15,7 +13,7 @@ public class Main {
             System.out.println("5. Exit");
             System.out.println("enter choice: ");
             choice = sc.nextInt();
-          switch (choice){
+          switch(choice){
                 case 1:
                     do {
                         System.out.println("\n ======= Client Menu ======");
@@ -38,5 +36,7 @@ public class Main {
                     System.out.println("this choice isn't available");
             }
         }while (choice != 3);
+        System.out.println("this choice isn't available");
+
     }
 }
