@@ -3,27 +3,31 @@ import java.util.Scanner;
 
 
  public  class Client {
-    static int id=0;
+    static int counter=1;
+    private int id;
     private String full_name;
     static  ArrayList<Client> clients = new ArrayList<>();
 
-    public Client(String full_name, String email, String addressee, String telephone, int id) {
+    public Client(String full_name, String email, String addressee, String telephone) {
+        this.id=counter;
         this.full_name = full_name;
         this.email = email;
         this.addressee = addressee;
         this.telephone = telephone;
+        counter++;
+
     }
 
     private String email;
     private String addressee;
     private String telephone;
 
-    public static int getId() {
+    public  int getId() {
         return id;
     }
 
-    public static void setId(int id) {
-        Client.id = id;
+    public  void setId(int id) {
+        this.id = id;
     }
 
     public String getFull_name() {
@@ -98,9 +102,8 @@ import java.util.Scanner;
             }
         }
 
-        // Increment id and add client to list
-        id++;
-        Client in = new Client(full_name, email, adressee, telephone, id);
+
+        Client in = new Client(full_name, email, adressee, telephone);
         clients.add(in);
         System.out.println(" [ Adding Client succeeded ] ");
     }

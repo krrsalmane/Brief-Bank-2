@@ -66,16 +66,16 @@ public  abstract class Account {
                case 2:
                    ca.CurentAccount();
                    break;
-
            }
        }while (choice != 3);}
         public  Client RechercheClientIdExiste(int idClient){
             for (Client client : Client.clients){
-                if (idClient==Client.getId()){
+                if (idClient==client.getId()){
                     return client;
                 }
             }
             return null;
         }
+
 }
 
