@@ -8,11 +8,10 @@ public  abstract class Account {
   Client owner;
   private String account_type;
 
-    public Account(int account_number, double balance, Client owner ,String account_type) {
+    public Account(int account_number, double balance, Client owner) {
         this.account_number = account_number;
         this.balance = balance;
         this.owner = owner;
-        this.account_type = account_type;
     }
     public Account (){}
 
@@ -48,8 +47,9 @@ public  abstract class Account {
         this.account_type = account_type;
     }
 
-    public void Create_account(){
+    public static void Create_account(){
         int choice;
+        Scanner sc = new Scanner(System.in);
         SavingsAccount sa = new SavingsAccount();
         CurrentAccount ca = new CurrentAccount();
        do {
@@ -61,16 +61,21 @@ public  abstract class Account {
 
            switch (choice) {
                case 1:
-                   sa.calculate_intrest();
+                   sa.Saving_Account();
                   break;
                case 2:
-                   ca.Curentaccount();
+                   ca.CurentAccount();
                    break;
 
            }
-
-
-       }while (choice != 3);
-    }
+       }while (choice != 3);}
+        public  Client RechercheClientIdExiste(int idClient){
+            for (Client client : Client.clients){
+                if (idClient==Client.getId()){
+                    return client;
+                }
+            }
+            return null;
+        }
 }
 

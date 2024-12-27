@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
- public class Client {
-    static int id=1;
+ public  class Client {
+    static int id=0;
     private String full_name;
     static  ArrayList<Client> clients = new ArrayList<>();
 
