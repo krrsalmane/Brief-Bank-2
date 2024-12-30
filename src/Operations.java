@@ -70,7 +70,12 @@ public class Operations {
     }
 
 
-
+    // Optional: Display transaction history
+    public static void displayTransactions(Account account) {
+        System.out.println("Transaction history for account " + account.getAccount_number() + ":");
+        for (String record : account.getTransactionHistory()) {
+            System.out.println(record);
+        }
     }
 }
 
