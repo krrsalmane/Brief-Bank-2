@@ -58,6 +58,18 @@ public class Operations {
     }
 
 
+    // Method to withdraw money
+    public static void withdraw(Account account, double amount) {
+        if (amount > 0 && account.getBalance() >= amount) {
+            account.setBalance(account.getBalance() - amount);
+            account.addTransaction("Withdrawal: -" + amount + " on " + new Date());
+            System.out.println("Withdrawal successful. New balance: " + account.getBalance());
+        } else {
+            System.out.println("Insufficient balance or invalid amount.");
+        }
+    }
+
+
 
     }
 }
